@@ -2,9 +2,9 @@
  * Created by arnoudvandervelden on 27/07/15.
  */
 var gulp = require('gulp');
+var connect = require('gulp-connect');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
-var concat = require('gulp-connect');
 var sass = require('gulp-sass');
 
 gulp.task('styles', function(){
@@ -19,17 +19,22 @@ gulp.task('scripts', function(){
         .pipe(gulp.dest('app/scripts/'))
         .pipe(uglify())
         .pipe(gulp.dest('app/scripts/'))
-})
+});
+
+gulp.task('html', function () {
+    gulp.src('app/**/*.html')
+        .pipe(connect.reload());
+});
 
 //Watch task
 gulp.task('default', function(){
     gulp.watch('sass/**/*.scss', ['styles']);
     gulp.watch('scripts/**/*.js', ['scripts']);
-});
+    gulp.watch(['app/**/*.html'], ['html']);
 
-gulp.task('connect', function() {
     connect.server({
-        root: '.',
+        root: 'app',
         livereload: true
     })
 });
+
