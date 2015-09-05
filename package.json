@@ -1,0 +1,20 @@
+{
+  "name": "hansraaijmakers-static_theme",
+  "version": "1.0.0",
+  "description": "HTML template for wordpress theme Hans Raaijmakers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "sass",
+    "jeet"
+  ],
+  "author": "Arnoud van der Velden",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4"
+  }
+}
