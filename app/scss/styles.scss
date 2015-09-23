@@ -1,4 +1,124 @@
-body{
-  background: #000;
+// Core variables and mixins
+@import "bootstrap";
+@import "_variables";
+@import "font-awesome";
+
+body {
+  font-family: 'Corbel';
+  font-size: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 920px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero {
+  background: url('../images/bg2.jpg') no-repeat center top;
+  background-size: cover;
+  height: 80vh;
+  padding-top: 225px;
+  overflow: hidden;
+  position: relative;
+  right: 0;
+
+  &::before {
+    content: " ";
+    //background-image: linear-gradient(transparent, black);
+    opacity: 0.3;
+    height: 40%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+  }
+
+  &::after {
+    content: " ";
+    background-image: linear-gradient(transparent, #000);
+    opacity: 0.45;
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+  }
+}
+
+.navbar {
+  border: 0!important;
+  border-radius: 0;
+  padding: 8px 0;
+  margin: 0;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+  &-brand {
+    float: left;
+    padding: 10px 0 0 0;
+  }
+  &-collapse {
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  a {
+    color: $darkgray-color;
+    & .caret {
+      border-top:4px dashed $secondary-color-variant1;
+    }
+  }
+}
+
+.proposition {
+  z-index: 2;
+  position: relative;
   color: white;
+  &__title {
+    color: white;
+    font-size: 3em;
+    &--italic {
+      font-style: italic;
+      font-weight: bold;
+    }
+  }
+  &__subtitle {
+    color: white;
+    font-size: 2em;
+    line-height: 0.7em;
+    display: block;
+    margin-bottom: 35px;
+    opacity: 0.8;
+  }
+  &__cta {
+    font-family: 'Corbel', sans-serif;
+    display: inline;
+    font-size: 1.6em;
+    border-bottom: 2px solid $secondary-color;
+    margin-right: 25px;
+    padding-bottom: 4px;
+    position: relative;
+    padding-right: 15px;
+
+    &:after {
+      content: " " + "\f105";
+      font-family: 'FontAwesome';
+      width: 8px;
+      height: 13px;
+      top: 50%;
+      margin-top: -18px;
+      position: absolute;
+      right: 0;
+      font-size: 21px;
+    }
+  }
+
 }
