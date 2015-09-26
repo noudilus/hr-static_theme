@@ -3,17 +3,30 @@
 @import "_variables";
 @import "font-awesome";
 
+@mixin clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
 body {
   font-family: 'Corbel';
   font-size: 12px;
 }
 
-* {
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 .wrapper {
-  max-width: 920px;
+  max-width: 980px;
   margin: 0 auto;
   position: relative;
 }
@@ -22,10 +35,11 @@ body {
   background: url('../images/bg2.jpg') no-repeat center top;
   background-size: cover;
   height: 80vh;
-  padding-top: 225px;
+  padding-top: 185px;
   overflow: hidden;
   position: relative;
   right: 0;
+  z-index: 1;
 
   &::before {
     content: " ";
@@ -67,13 +81,25 @@ body {
   }
   &-collapse {
     font-size: 1em;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
   }
   a {
-    color: $darkgray-color;
+    color: $primary-color;
     & .caret {
       border-top:4px dashed $secondary-color-variant1;
+    }
+  }
+}
+
+.dropdown {
+  &-menu {
+    font-size: 1.2em;
+    text-transform: none;
+    border: 0;
+    & li a {
+      padding: 3px 15px;
     }
   }
 }
@@ -82,6 +108,7 @@ body {
   z-index: 2;
   position: relative;
   color: white;
+
   &__title {
     color: white;
     font-size: 3em;
@@ -120,5 +147,140 @@ body {
       font-size: 21px;
     }
   }
+}
 
+.quickboxes {
+  margin-top: -180px;
+  margin-bottom: 180px;
+  z-index: 2;
+  position: relative;
+}
+
+.quickbox {
+  padding: 0 20px 15px 0;
+  @extend .col-sm-6;
+  float: left;
+
+  &__title {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: $primary-color;
+    margin-bottom: 6px;
+  }
+
+  &__copy {
+    font-size: 1.2em;
+    line-height: 1.3em;
+  }
+
+  &__link {
+    font-family: 'Corbel', sans-serif;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.2em;
+    border-bottom: 2px solid $secondary-color;
+    margin-right: 25px;
+    padding-bottom: 2px;
+    position: relative;
+  }
+
+  &__image {
+    background: url("../images/werkwijze-thumb.jpg") center center;
+    background-size: cover;
+    height: 152px;
+    width: 165px;
+    float: left;
+    margin-right: 20px;
+
+    &--werkwijze {
+      background-image: url("../images/werkwijze-thumb.jpg");
+    }
+
+    &--rondleiding {
+      background-image: url("../images/rondleiding-thumb.jpg");
+    }
+  }
+
+  &__inner {
+    border-radius: 6px;
+    padding: 12px 20px 20px 20px;
+    background: rgba(255,255,255,1);
+    height: auto;
+  }
+}
+
+.streamerbox {
+  margin: 10px 0;
+}
+
+.streamer {
+  padding: 40px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  &__title {
+    font-size: 2.2em;
+    text-align: center;
+  }
+}
+
+.highlighted {
+  z-index: 2;
+  padding: 25px 0;
+  margin-bottom: 200px;
+  position: relative;
+}
+
+.highlightbox {
+  padding: 0 20px 15px 0;
+  @extend .col-sm-6;
+  float: left;
+
+  &__title {
+    font-size: 2em;
+    font-weight: bold;
+    color: $primary-color;
+    margin-top: 20px;
+    margin-bottom: 6px;
+  }
+
+  &__copy {
+    font-size: 1.2em;
+    line-height: 1.3em;
+  }
+
+  &__link {
+    font-family: 'Corbel', sans-serif;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.2em;
+    border-bottom: 2px solid $secondary-color;
+    margin-right: 25px;
+    padding-bottom: 2px;
+    position: relative;
+  }
+
+  &__image {
+    background: url("../images/werkwijze-thumb.jpg") center center;
+    background-size: cover;
+    height: 152px;
+    width: 100%;
+    margin-right: 20px;
+
+    @include clearfix;
+
+    &--first {
+      background-image: url("../images/bg1.jpg");
+    }
+
+    &--second {
+      background-image: url("../images/bg2.jpg");
+    }
+  }
+
+  &__inner {
+    border-radius: 6px;
+    height: auto;
+    border: 1px solid #e3e3e3;
+    padding: 20px;
+  }
 }
