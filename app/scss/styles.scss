@@ -67,7 +67,7 @@ body {
 }
 
 .navbar {
-  border: 0!important;
+  border: 0 !important;
   border-radius: 0;
   padding: 8px 0;
   margin: 0;
@@ -88,7 +88,7 @@ body {
   a {
     color: $primary-color;
     & .caret {
-      border-top:4px dashed $secondary-color-variant1;
+      border-top: 4px dashed $secondary-color-variant1;
     }
   }
 }
@@ -151,9 +151,10 @@ body {
 
 .quickboxes {
   margin-top: -180px;
-  margin-bottom: 180px;
   z-index: 2;
   position: relative;
+
+  @include clearfix;
 }
 
 .quickbox {
@@ -204,48 +205,84 @@ body {
   &__inner {
     border-radius: 6px;
     padding: 12px 20px 20px 20px;
-    background: rgba(255,255,255,1);
+    background: rgba(255, 255, 255, 1);
     height: auto;
   }
 }
 
 .streamerbox {
-  margin: 10px 0;
+  margin-top: 40px;
 }
 
 .streamer {
-  padding: 40px 0;
+  padding: 20px 0;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   &__title {
-    font-size: 2.2em;
+    font-size: 2em;
+    color: #929292;
     text-align: center;
+
+    & strong,
+    .fa{
+      color: #000;
+    }
   }
 }
 
 .highlighted {
   z-index: 2;
-  padding: 25px 0;
-  margin-bottom: 200px;
+  padding: 40px 0;
   position: relative;
+
+  @include clearfix;
 }
 
 .highlightbox {
   padding: 0 20px 15px 0;
-  @extend .col-sm-6;
+  @extend .col-sm-4;
   float: left;
+
+  &--info {
+    background: $lightblue-color;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+
+    & .highlightbox__inner {
+      margin: 0;
+      padding: 40px;
+    }
+
+    & .highlightbox__title {
+      padding: 0;
+      margin: 0;
+    }
+
+    & .highlightbox__image {
+      display: none;
+    }
+  }
 
   &__title {
     font-size: 2em;
+    line-height: 1em;
     font-weight: bold;
     color: $primary-color;
-    margin-top: 20px;
-    margin-bottom: 6px;
+  }
+
+  &__subtitle {
+    color: $secondary-color;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
   &__copy {
-    font-size: 1.2em;
-    line-height: 1.3em;
+    color: #929292;
+    font-size: 1.3em;
+    line-height: 1.4em;
   }
 
   &__link {
@@ -278,9 +315,27 @@ body {
   }
 
   &__inner {
-    border-radius: 6px;
+    border-radius: 4px;
+    //box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    //border: 1px solid #e5e5e5;
     height: auto;
-    border: 1px solid #e3e3e3;
-    padding: 20px;
+    padding: 20px 30px 20px 0;
+  }
+}
+
+.footer {
+  background: url('http://www.hansraaijmakers.nl/wp-content/themes/hans/img/bg.jpg');
+  padding: 50px 0;
+  border-top: 10px solid $primary-color;
+  border-bottom: 10px solid white;
+
+  @include clearfix;
+
+  &__content {
+    font-size: 1.2em;
+    line-height: 1.5em;
+
+    padding: 0;
+    @extend .col-sm-3;
   }
 }
