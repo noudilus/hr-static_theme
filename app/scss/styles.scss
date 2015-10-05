@@ -19,23 +19,17 @@ body {
   font-size: 12px;
 }
 
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.wrapper {
+.container-fluid {
   max-width: 980px;
   margin: 0 auto;
   position: relative;
 }
 
 .hero {
-  background: url('../images/bg2.jpg') no-repeat center top;
+  background: url('../images/bg1.jpg') no-repeat center top;
   background-size: cover;
-  height: 80vh;
-  padding-top: 185px;
+  height: 575px;
+  padding-top: 150px;
   overflow: hidden;
   position: relative;
   right: 0;
@@ -75,12 +69,36 @@ body {
   right: 0;
   left: 0;
   top: 0;
+  height: 68px;
+  @media (min-width: 400px) {
+    min-height: 105px;
+  }
+
   &-brand {
     float: left;
     padding: 10px 0 0 0;
+    overflow: hidden;
+    position: absolute;
+    left: -55px;
+    height: 45px;
+
+    @media (min-width: 400px) {
+      left: auto;
+      position: relative;
+      height: auto;
+    }
+
+  }
+  &-toggle {
+    font-size: 1.6em;
+    margin-top: 3px;
+    &__label {
+      margin-top: -2px;
+      display: none;
+    }
   }
   &-collapse {
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -91,6 +109,20 @@ body {
       border-top: 4px dashed $secondary-color-variant1;
     }
   }
+  &-nav {
+    > li {
+      > a {
+        padding: 4px 10px 1px 10px;
+        margin: 33px 4px;
+        &.active {
+          background: $primary-color;
+          text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.9);
+          border-radius: 3px;
+          color: white;
+        }
+      }
+    }
+  }
 }
 
 .dropdown {
@@ -98,9 +130,6 @@ body {
     font-size: 1.2em;
     text-transform: none;
     border: 0;
-    & li a {
-      padding: 3px 15px;
-    }
   }
 }
 
@@ -108,10 +137,13 @@ body {
   z-index: 2;
   position: relative;
   color: white;
+   @include make-xs-column(12);
 
   &__title {
     color: white;
     font-size: 3em;
+    line-height: 1em;
+
     &--italic {
       font-style: italic;
       font-weight: bold;
@@ -154,13 +186,11 @@ body {
   z-index: 2;
   position: relative;
 
-  @include clearfix;
 }
 
 .quickbox {
-  padding: 0 20px 15px 0;
-  @extend .col-sm-6;
-  float: left;
+  @include make-xs-column(12);
+  @include make-sm-column(6);
 
   &__title {
     font-size: 1.6em;
@@ -189,12 +219,17 @@ body {
     background: url("../images/werkwijze-thumb.jpg") center center;
     background-size: cover;
     height: 152px;
-    width: 165px;
+    width: 100px;
     float: left;
     margin-right: 20px;
 
+    @media (min-width: 400px){
+      width: 165px;
+    }
+
     &--werkwijze {
       background-image: url("../images/werkwijze-thumb.jpg");
+      background-position: center center;
     }
 
     &--rondleiding {
@@ -211,13 +246,15 @@ body {
 }
 
 .streamerbox {
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .streamer {
   padding: 20px 0;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-top: 1px solid rgba(200,200,200,0.35);
+  border-bottom: 1px solid rgba(200,200,200,0.35);
+  @include make-sm-column(12);
+
   &__title {
     font-size: 2em;
     color: #929292;
@@ -232,16 +269,15 @@ body {
 
 .highlighted {
   z-index: 2;
-  padding: 40px 0;
+  padding: 26px 0;
   position: relative;
-
-  @include clearfix;
 }
 
 .highlightbox {
-  padding: 0 20px 15px 0;
-  @extend .col-sm-4;
+  padding: 0 10px 15px 0;
   float: left;
+  @include make-xs-column(12);
+  @include make-sm-column(4);
 
   &--info {
     background: $lightblue-color;
@@ -251,11 +287,13 @@ body {
 
     & .highlightbox__inner {
       margin: 0;
-      padding: 40px;
+      padding: 35px;
+      border-left: 25px solid white;
+      border-right: 15px solid white;
     }
 
     & .highlightbox__title {
-      padding: 0;
+      padding: 0 0 10px 0;
       margin: 0;
     }
 
@@ -274,7 +312,7 @@ body {
   &__subtitle {
     color: $secondary-color;
     margin-bottom: 20px;
-    margin-top: 10px;
+    margin-top: 6px;
     font-weight: bold;
     text-transform: uppercase;
   }
@@ -324,7 +362,7 @@ body {
 }
 
 .footer {
-  background: url('http://www.hansraaijmakers.nl/wp-content/themes/hans/img/bg.jpg');
+  //background: url('http://www.hansraaijmakers.nl/wp-content/themes/hans/img/bg.jpg');
   padding: 50px 0;
   border-top: 10px solid $primary-color;
   border-bottom: 10px solid white;

@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
     <title></title>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet'
-          type='text/css'>
+    <!--<link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>-->
     <!--build:css css/styles.min.css-->
     <link rel="stylesheet" href="css/styles.css">
     <!--endbuild-->
@@ -14,16 +15,13 @@
 <body>
 
 <header class="navbar" role="banner">
-    <div class="wrapper">
+    <div class="container-fluid">
         <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse"
-                    data-target=".bs-navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="navbar-toggle__label">menu</span> <span class="fa fa-navicon"></span>
             </button>
             <a href="index.html" class="navbar-brand">
-                <object type="image/svg+xml" width="225" data="images/logo-flat.svg">Your browser
+                <object type="image/svg+xml" width="175" data="images/logo-flat-v2.svg">Your browser
                     does not support
                     SVGs
                 </object>
@@ -32,7 +30,7 @@
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav navbar-right">
                 <li class="">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a target="" href="#" class="active">
                         Home
                     </a>
                 </li>
@@ -71,55 +69,54 @@
                         <li><a href="">Contact</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
             </ul>
         </nav>
     </div>
 </header>
 
 <section class="hero">
-
-    <div class="proposition">
-        <div class="wrapper">
-            <div class="proposition__title">Met <span
-                    class="proposition__title--italic">menselijke</span> betrokkenheid
+    <div class="container-fluid">
+        <div class="row">
+            <div class="proposition">
+                <div class="proposition__title">Met <span class="proposition__title--italic">menselijke</span> betrokkenheid</div>
+                <div class="proposition__subtitle">In huiselijke sfeer kunt u dag en nacht uw dierbare bezoeken.</div>
+                <div class="proposition__cta proposition__cta--large">Over het Uitvaarthuis</div>
+                <div class="proposition__cta proposition__cta--large">Neem contact op</div>
             </div>
-            <div class="proposition__subtitle">In huiselijke sfeer kunt u dag en nacht uw dierbare
-                bezoeken.
-            </div>
-            <div class="proposition__cta proposition__cta--large">Over het Uitvaarthuis</div>
-            <div class="proposition__cta proposition__cta--large">Neem contact op</div>
         </div>
     </div>
-
 </section>
 
 <section class="quickboxes">
-    <div class="wrapper">
-        <div class="quickbox">
-            <div class="quickbox__image quickbox__image--werkwijze"></div>
-            <div class="quickbox__inner">
-                <div class="quickbox__title">Een persoonlijke uitvaart</div>
-                <div class="quickbox__copy">Kleinschalig, eigentijds, persoonlijk. Na het overlijden
-                    van een dierbare moet er veel geregeld en besloten worden.
+    <div class="container-fluid">
+        <div class="row">
+            <div class="quickbox">
+                <div class="quickbox__image quickbox__image--werkwijze"></div>
+                <div class="quickbox__inner">
+                    <div class="quickbox__title">Een persoonlijke uitvaart</div>
+                    <div class="quickbox__copy">Kleinschalig, eigentijds, persoonlijk. Na het overlijden van een dierbare moet er veel geregeld en besloten worden.</div>
+                    <div class="quickbox__link">Meer informatie</div>
                 </div>
-                <div class="quickbox__link">Meer informatie</div>
             </div>
-        </div>
-        <div class="quickbox">
-            <div class="quickbox__image quickbox__image--rondleiding"></div>
-            <div class="quickbox__inner">
-                <div class="quickbox__title">Bekijk de 360° rondleiding</div>
-                <div class="quickbox__copy">Wanneer het niet mogelijk is om de overledene thuis op
-                    te baren kunt u kiezen voor het Uitvaarthuis.
+            <div class="quickbox">
+                <div class="quickbox__image quickbox__image--rondleiding"></div>
+                <div class="quickbox__inner">
+                    <div class="quickbox__title">Bekijk de 360° rondleiding</div>
+                    <div class="quickbox__copy">Wanneer het niet mogelijk is om de overledene thuis op
+                        te baren kunt u kiezen voor het Uitvaarthuis.
+                    </div>
+                    <div class="quickbox__link">Meer informatie</div>
                 </div>
-                <div class="quickbox__link">Meer informatie</div>
             </div>
         </div>
     </div>
 </section>
 
 <div class="streamerbox">
-    <div class="wrapper">
+    <div class="container-fluid">
         <div class="streamer">
             <div class="streamer__title">
                 Wij zijn dag en nacht voor u bereikbaar op <i class="fa fa-phone"></i> <strong>040
@@ -130,7 +127,7 @@
 </div>
 
 <section class="highlighted">
-    <div class="wrapper">
+    <div class="container-fluid">
         <div class="row">
             <div class="highlight__content">
                 <div class="highlightbox">
@@ -203,7 +200,7 @@
 </section>
 
 <footer class="footer">
-    <div class="wrapper">
+    <div class="container-fluid">
         <div class="footer__content">
             <div class="footer__title">
                 Hans Raaijmakers uitvaartzorg
