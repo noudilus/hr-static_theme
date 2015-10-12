@@ -10,3 +10,7 @@ $lightblue-color: #DEE6ED;
   background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
   background: linear-gradient($direction, $color-stops);
 }
+
+@mixin border-radius($size){
+  border-radius: $size;
+}
