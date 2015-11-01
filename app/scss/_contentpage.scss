@@ -1,0 +1,90 @@
+.content {
+  width: 66.3%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  float: left;
+
+  &__headings {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    border-bottom: 1px dotted #ccc;
+    &__title {
+      font-weight: bold;
+      color: $primary-color;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__subtitle {
+      font-size: 1.3rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: $secondary-color;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.sidebar {
+  width: 33.3%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  float: left;
+  margin-top: 30px;
+
+  &__block {
+
+  }
+}
+
+.search {
+  background: darken($lightblue-color, 8%);
+  padding: 20px;
+  @include border-radius(4px);
+  margin: 0;
+  margin-bottom: 20px;
+
+  &__input {
+    font-size: 1.6rem;
+    width: 100%;
+    border: 0;
+    padding: 6px 6px 3px 6px;
+    box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    &:after {
+      font-size: 1.7rem;
+      color: $primary-color;
+      font-family: 'FontAwesome';
+      content: "\f002";
+    }
+    &:hover,
+    &:focus,
+    &:active{
+      text-decoration: none;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

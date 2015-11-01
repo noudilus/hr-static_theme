@@ -6060,6 +6060,74 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+.content {
+  width: 66.3%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  float: left; }
+  .content__headings {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    border-bottom: 1px dotted #ccc; }
+    .content__headings__title {
+      font-weight: bold;
+      color: #826d61;
+      margin: 0;
+      padding: 0; }
+    .content__headings__subtitle {
+      font-size: 1.3rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #BF8C2C;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase; }
+
+.sidebar {
+  width: 33.3%;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  float: left;
+  margin-top: 30px; }
+
+.search {
+  background: #c4d2df;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 0;
+  margin-bottom: 20px; }
+  .search__input {
+    font-size: 1.6rem;
+    width: 100%;
+    border: 0;
+    padding: 6px 6px 3px 6px;
+    box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1); }
+    .search__input:focus {
+      outline: none; }
+  .search__wrapper {
+    position: relative; }
+  .search__icon {
+    position: absolute;
+    top: 4px;
+    right: 10px; }
+    .search__icon:after {
+      font-size: 1.7rem;
+      color: #826d61;
+      font-family: 'FontAwesome';
+      content: "\f002"; }
+    .search__icon:hover,
+    .search__icon:focus,
+    .search__icon:active {
+      text-decoration: none; }
+    .search__icon:hover {
+      opacity: 0.8; }
+
 /*!
  *  Font Awesome 4.4.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -8085,8 +8153,7 @@ body {
   line-height: 2.2rem; }
 
 p {
-  font-size: 1.4rem;
-  line-height: 2rem; }
+  font-size: 1.6rem; }
 
 .container-fluid {
   max-width: 980px;
