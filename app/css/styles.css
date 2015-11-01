@@ -6070,7 +6070,7 @@ button.close {
   .content__headings {
     margin-top: 30px;
     margin-bottom: 20px;
-    padding: 20px 0;
+    padding-bottom: 20px;
     border-bottom: 1px dotted #ccc; }
     .content__headings__title {
       font-weight: bold;
@@ -6112,10 +6112,22 @@ button.close {
       outline: none; }
   .search__wrapper {
     position: relative; }
+    .search__wrapper::after {
+      content: " ";
+      background-image: linear-gradient(90deg, transparent, white);
+      opacity: 1;
+      height: 100%;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+      width: 60px;
+      right: 0; }
   .search__icon {
     position: absolute;
     top: 4px;
-    right: 10px; }
+    right: 10px;
+    z-index: 99999; }
     .search__icon:after {
       font-size: 1.7rem;
       color: #826d61;
