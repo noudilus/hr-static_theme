@@ -1544,7 +1544,7 @@ pre {
   .row:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .footer__content, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .highlightbox, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .quickbox, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .footer__content, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -1707,7 +1707,7 @@ pre {
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, .footer__content, .col-sm-4, .highlightbox, .col-sm-5, .col-sm-6, .quickbox, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  .col-sm-1, .col-sm-2, .col-sm-3, .footer__content, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left; }
   .col-sm-1 {
     width: 8.33333%; }
@@ -1715,11 +1715,11 @@ pre {
     width: 16.66667%; }
   .col-sm-3, .footer__content {
     width: 25%; }
-  .col-sm-4, .highlightbox {
+  .col-sm-4 {
     width: 33.33333%; }
   .col-sm-5 {
     width: 41.66667%; }
-  .col-sm-6, .quickbox {
+  .col-sm-6 {
     width: 50%; }
   .col-sm-7 {
     width: 58.33333%; }
@@ -8083,21 +8083,17 @@ body {
   font-family: 'Corbel';
   font-size: 12px; }
 
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-.wrapper {
+.container-fluid {
   max-width: 980px;
   margin: 0 auto;
   position: relative; }
 
 .hero {
-  background: url("../images/bg2.jpg") no-repeat center top;
+  background: url("../images/bg1.jpg") no-repeat center top;
   background-size: cover;
-  height: 80vh;
-  padding-top: 185px;
+  margin: 0 auto;
+  height: 575px;
+  padding-top: 140px;
   overflow: hidden;
   position: relative;
   right: 0;
@@ -8130,12 +8126,30 @@ body {
   z-index: 10;
   right: 0;
   left: 0;
-  top: 0; }
+  top: 0;
+  height: 68px; }
+  @media (min-width: 400px) {
+    .navbar {
+      min-height: 105px; } }
   .navbar-brand {
     float: left;
-    padding: 10px 0 0 0; }
+    padding: 5px 0 0 10px;
+    overflow: hidden;
+    position: absolute;
+    height: 45px; }
+    @media (min-width: 400px) {
+      .navbar-brand {
+        left: auto;
+        position: relative;
+        height: auto; } }
+  .navbar-toggle {
+    font-size: 1.6em;
+    margin-top: 3px; }
+    .navbar-toggle__label {
+      margin-top: -2px;
+      display: none; }
   .navbar-collapse {
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px; }
@@ -8143,21 +8157,34 @@ body {
     color: #826d61; }
     .navbar a .caret {
       border-top: 4px dashed #D8B011; }
+  .navbar-nav > li > a {
+    padding: 4px 10px;
+    margin: 33px 4px; }
+    .navbar-nav > li > a.active {
+      background: #826d61;
+      text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.9);
+      border-radius: 3px;
+      color: white; }
 
 .dropdown-menu {
   font-size: 1.2em;
   text-transform: none;
   border: 0; }
-  .dropdown-menu li a {
-    padding: 3px 15px; }
 
 .proposition {
   z-index: 2;
   position: relative;
-  color: white; }
+  color: white;
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px; }
   .proposition__title {
     color: white;
-    font-size: 3em; }
+    font-size: 3em;
+    line-height: 1em; }
     .proposition__title--italic {
       font-style: italic;
       font-weight: bold; }
@@ -8167,6 +8194,7 @@ body {
     line-height: 0.7em;
     display: block;
     margin-bottom: 35px;
+    margin-top: 5px;
     opacity: 0.8; }
   .proposition__cta {
     font-family: 'Corbel', sans-serif;
@@ -8189,20 +8217,26 @@ body {
       font-size: 21px; }
 
 .quickboxes {
-  margin-top: -180px;
+  margin-top: -200px;
+  margin-bottom: 48px;
   z-index: 2;
   position: relative; }
-  .quickboxes:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0; }
 
 .quickbox {
-  padding: 0 20px 15px 0;
-  float: left; }
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px; }
+  @media (min-width: 768px) {
+    .quickbox {
+      float: left;
+      width: 50%; } }
   .quickbox__title {
     font-size: 1.6em;
     font-weight: bold;
@@ -8224,11 +8258,15 @@ body {
     background: url("../images/werkwijze-thumb.jpg") center center;
     background-size: cover;
     height: 152px;
-    width: 165px;
+    width: 100px;
     float: left;
     margin-right: 20px; }
+    @media (min-width: 400px) {
+      .quickbox__image {
+        width: 165px; } }
     .quickbox__image--werkwijze {
-      background-image: url("../images/werkwijze-thumb.jpg"); }
+      background-image: url("../images/werkwijze-thumb.jpg");
+      background-position: center center; }
     .quickbox__image--rondleiding {
       background-image: url("../images/rondleiding-thumb.jpg"); }
   .quickbox__inner {
@@ -8238,12 +8276,17 @@ body {
     height: auto; }
 
 .streamerbox {
-  margin-top: 40px; }
+  padding: 30px 0; }
 
 .streamer {
-  padding: 20px 0;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc; }
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px; }
+  @media (min-width: 768px) {
+    .streamer {
+      float: left;
+      width: 100%; } }
   .streamer__title {
     font-size: 2em;
     color: #929292;
@@ -8254,19 +8297,26 @@ body {
 
 .highlighted {
   z-index: 2;
-  padding: 40px 0;
+  margin-top: 0;
   position: relative; }
-  .highlighted:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0; }
 
 .highlightbox {
-  padding: 0 20px 15px 0;
-  float: left; }
+  border-radius: 10px;
+  float: left;
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px; }
+  @media (min-width: 768px) {
+    .highlightbox {
+      float: left;
+      width: 33.33333%; } }
   .highlightbox--info {
     background: #DEE6ED;
     padding: 0;
@@ -8274,11 +8324,37 @@ body {
     margin-bottom: 20px; }
     .highlightbox--info .highlightbox__inner {
       margin: 0;
-      padding: 40px; }
+      padding: 30px;
+      border-left: 25px solid white;
+      border-right: 15px solid white; }
     .highlightbox--info .highlightbox__title {
-      padding: 0;
+      padding: 0 0 10px 0;
       margin: 0; }
     .highlightbox--info .highlightbox__image {
+      display: none; }
+  .highlightbox--search {
+    background: #c4d2df;
+    border-radius: 10px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px; }
+    .highlightbox--search .highlightbox__input {
+      width: 100%;
+      border: 0;
+      padding: 6px 6px 3px 6px;
+      box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
+      border-bottom: solid 1px rgba(0, 0, 0, 0.1); }
+      .highlightbox--search .highlightbox__input:after {
+        content: "q"; }
+    .highlightbox--search .highlightbox__inner {
+      margin: 0;
+      padding: 30px;
+      border-left: 25px solid white;
+      border-right: 15px solid white; }
+    .highlightbox--search .highlightbox__title {
+      padding: 0 0 10px 0;
+      margin: 0; }
+    .highlightbox--search .highlightbox__image {
       display: none; }
   .highlightbox__title {
     font-size: 2em;
@@ -8288,7 +8364,7 @@ body {
   .highlightbox__subtitle {
     color: #BF8C2C;
     margin-bottom: 20px;
-    margin-top: 10px;
+    margin-top: 6px;
     font-weight: bold;
     text-transform: uppercase; }
   .highlightbox__copy {
@@ -8318,7 +8394,7 @@ body {
       clear: both;
       height: 0; }
     .highlightbox__image--first {
-      background-image: url("../images/bg1.jpg"); }
+      background-image: url("../images/rozen.jpg"); }
     .highlightbox__image--second {
       background-image: url("../images/bg2.jpg"); }
   .highlightbox__inner {
@@ -8327,10 +8403,10 @@ body {
     padding: 20px 30px 20px 0; }
 
 .footer {
-  background: url("http://www.hansraaijmakers.nl/wp-content/themes/hans/img/bg.jpg");
   padding: 50px 0;
   border-top: 10px solid #826d61;
-  border-bottom: 10px solid white; }
+  border-bottom: 10px solid white;
+  margin-top: 50px; }
   .footer:after {
     visibility: hidden;
     display: block;

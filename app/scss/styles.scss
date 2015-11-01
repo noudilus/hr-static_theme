@@ -19,23 +19,19 @@ body {
   font-size: 12px;
 }
 
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.wrapper {
+.container-fluid {
   max-width: 980px;
   margin: 0 auto;
   position: relative;
 }
 
 .hero {
-  background: url('../images/bg2.jpg') no-repeat center top;
+  background: url('../images/bg1.jpg') no-repeat center top;
   background-size: cover;
-  height: 80vh;
-  padding-top: 185px;
+  //max-width: 1200px;
+  margin: 0 auto;
+  height: 575px;
+  padding-top: 140px;
   overflow: hidden;
   position: relative;
   right: 0;
@@ -75,12 +71,35 @@ body {
   right: 0;
   left: 0;
   top: 0;
+  height: 68px;
+  @media (min-width: 400px) {
+    min-height: 105px;
+  }
+
   &-brand {
     float: left;
-    padding: 10px 0 0 0;
+    padding: 5px 0 0 10px;
+    overflow: hidden;
+    position: absolute;
+    height: 45px;
+
+    @media (min-width: 400px) {
+      left: auto;
+      position: relative;
+      height: auto;
+    }
+
+  }
+  &-toggle {
+    font-size: 1.6em;
+    margin-top: 3px;
+    &__label {
+      margin-top: -2px;
+      display: none;
+    }
   }
   &-collapse {
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -91,6 +110,20 @@ body {
       border-top: 4px dashed $secondary-color-variant1;
     }
   }
+  &-nav {
+    > li {
+      > a {
+        padding: 4px 10px;
+        margin: 33px 4px;
+        &.active {
+          background: $primary-color;
+          text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.9);
+          border-radius: 3px;
+          color: white;
+        }
+      }
+    }
+  }
 }
 
 .dropdown {
@@ -98,9 +131,6 @@ body {
     font-size: 1.2em;
     text-transform: none;
     border: 0;
-    & li a {
-      padding: 3px 15px;
-    }
   }
 }
 
@@ -108,10 +138,13 @@ body {
   z-index: 2;
   position: relative;
   color: white;
+  @include make-xs-column(12);
 
   &__title {
     color: white;
     font-size: 3em;
+    line-height: 1em;
+
     &--italic {
       font-style: italic;
       font-weight: bold;
@@ -123,6 +156,7 @@ body {
     line-height: 0.7em;
     display: block;
     margin-bottom: 35px;
+    margin-top: 5px;
     opacity: 0.8;
   }
   &__cta {
@@ -150,17 +184,16 @@ body {
 }
 
 .quickboxes {
-  margin-top: -180px;
+  margin-top: -200px;
+  margin-bottom: 48px;
   z-index: 2;
   position: relative;
 
-  @include clearfix;
 }
 
 .quickbox {
-  padding: 0 20px 15px 0;
-  @extend .col-sm-6;
-  float: left;
+  @include make-xs-column(12);
+  @include make-sm-column(6);
 
   &__title {
     font-size: 1.6em;
@@ -189,12 +222,17 @@ body {
     background: url("../images/werkwijze-thumb.jpg") center center;
     background-size: cover;
     height: 152px;
-    width: 165px;
+    width: 100px;
     float: left;
     margin-right: 20px;
 
+    @media (min-width: 400px){
+      width: 165px;
+    }
+
     &--werkwijze {
       background-image: url("../images/werkwijze-thumb.jpg");
+      background-position: center center;
     }
 
     &--rondleiding {
@@ -211,13 +249,14 @@ body {
 }
 
 .streamerbox {
-  margin-top: 40px;
+  padding: 30px 0;
 }
 
 .streamer {
-  padding: 20px 0;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  //border-top: 1px solid rgba(200,200,200,0.35);
+  //border-bottom: 1px solid rgba(200,200,200,0.35);
+  @include make-sm-column(12);
+
   &__title {
     font-size: 2em;
     color: #929292;
@@ -232,16 +271,16 @@ body {
 
 .highlighted {
   z-index: 2;
-  padding: 40px 0;
+  margin-top: 0;
+  //padding: 26px 0;
   position: relative;
-
-  @include clearfix;
 }
 
 .highlightbox {
-  padding: 0 20px 15px 0;
-  @extend .col-sm-4;
+  @include border-radius(10px);
   float: left;
+  @include make-xs-column(12);
+  @include make-sm-column(4);
 
   &--info {
     background: $lightblue-color;
@@ -251,11 +290,50 @@ body {
 
     & .highlightbox__inner {
       margin: 0;
-      padding: 40px;
+      padding: 30px;
+      border-left: 25px solid white;
+      border-right: 15px solid white;
     }
 
     & .highlightbox__title {
-      padding: 0;
+      padding: 0 0 10px 0;
+      margin: 0;
+    }
+
+    & .highlightbox__image {
+      display: none;
+    }
+  }
+
+  &--search {
+    background: darken($lightblue-color, 8%);
+    @include border-radius(10px);
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+
+    & .highlightbox__input {
+      width: 100%;
+      border: 0;
+      padding: 6px 6px 3px 6px;
+      box-shadow: 0 -1px 1px rgba(0,0,0,0.1);
+      border-bottom: solid 1px rgba(0,0,0,0.1);
+
+      &:after {
+        content: "q";
+
+      }
+    }
+
+    & .highlightbox__inner {
+      margin: 0;
+      padding: 30px;
+      border-left: 25px solid white;
+      border-right: 15px solid white;
+    }
+
+    & .highlightbox__title {
+      padding: 0 0 10px 0;
       margin: 0;
     }
 
@@ -274,7 +352,7 @@ body {
   &__subtitle {
     color: $secondary-color;
     margin-bottom: 20px;
-    margin-top: 10px;
+    margin-top: 6px;
     font-weight: bold;
     text-transform: uppercase;
   }
@@ -306,7 +384,7 @@ body {
     @include clearfix;
 
     &--first {
-      background-image: url("../images/bg1.jpg");
+      background-image: url("../images/rozen.jpg");
     }
 
     &--second {
@@ -324,10 +402,11 @@ body {
 }
 
 .footer {
-  background: url('http://www.hansraaijmakers.nl/wp-content/themes/hans/img/bg.jpg');
+  //background: url('http://www.hansraaijmakers.nl/wp-content/themes/hans/img/bg.jpg');
   padding: 50px 0;
   border-top: 10px solid $primary-color;
   border-bottom: 10px solid white;
+  margin-top: 50px;
 
   @include clearfix;
 
