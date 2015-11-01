@@ -1,6 +1,7 @@
 // Core variables and mixins
 @import "bootstrap";
 @import "_variables";
+@import "_contentpage";
 @import "font-awesome";
 
 @mixin clearfix {
@@ -16,7 +17,7 @@
 
 body {
   font-family: 'Corbel';
-  font-size: 12px;
+  font-size: 62.5%;
 }
 
 .container-fluid {
