@@ -8080,8 +8080,13 @@ button.close {
   content: ""; }
 
 body {
-  font-family: 'Corbel';
-  font-size: 62.5%; }
+  font-family: 'Corbel', Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+  line-height: 2.2rem; }
+
+p {
+  font-size: 1.4rem;
+  line-height: 2rem; }
 
 .container-fluid {
   max-width: 980px;
@@ -8143,13 +8148,13 @@ body {
         position: relative;
         height: auto; } }
   .navbar-toggle {
-    font-size: 1.6em;
+    font-size: 1.6rem;
     margin-top: 3px; }
     .navbar-toggle__label {
       margin-top: -2px;
       display: none; }
   .navbar-collapse {
-    font-size: 0.9em;
+    font-size: 0.9rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px; }
@@ -8157,17 +8162,19 @@ body {
     color: #826d61; }
     .navbar a .caret {
       border-top: 4px dashed #D8B011; }
-  .navbar-nav > li > a {
-    padding: 4px 10px;
-    margin: 33px 4px; }
-    .navbar-nav > li > a.active {
-      background: #826d61;
-      text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.9);
-      border-radius: 3px;
-      color: white; }
+  .navbar-nav > li {
+    font-size: 1.1rem; }
+    .navbar-nav > li > a {
+      padding: 4px 10px;
+      margin: 33px 4px; }
+      .navbar-nav > li > a.active {
+        background: #826d61;
+        text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.9);
+        border-radius: 3px;
+        color: white; }
 
 .dropdown-menu {
-  font-size: 1.2em;
+  font-size: 1.4rem;
   text-transform: none;
   border: 0; }
 
@@ -8183,14 +8190,14 @@ body {
   padding-right: 15px; }
   .proposition__title {
     color: white;
-    font-size: 3em;
-    line-height: 1em; }
+    font-size: 4rem;
+    line-height: 4rem; }
     .proposition__title--italic {
       font-style: italic;
       font-weight: bold; }
   .proposition__subtitle {
     color: white;
-    font-size: 2em;
+    font-size: 2rem;
     line-height: 0.7em;
     display: block;
     margin-bottom: 35px;
@@ -8199,7 +8206,7 @@ body {
   .proposition__cta {
     font-family: 'Corbel', sans-serif;
     display: inline;
-    font-size: 1.6em;
+    font-size: 2rem;
     border-bottom: 2px solid #BF8C2C;
     margin-right: 25px;
     padding-bottom: 4px;
@@ -8238,18 +8245,17 @@ body {
       float: left;
       width: 50%; } }
   .quickbox__title {
-    font-size: 1.6em;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #826d61;
     margin-bottom: 6px; }
   .quickbox__copy {
-    font-size: 1.2em;
-    line-height: 1.3em; }
+    font-size: 1.6rem; }
   .quickbox__link {
     font-family: 'Corbel', sans-serif;
     display: inline-block;
     margin-top: 10px;
-    font-size: 1.2em;
+    font-size: 1.6rem;
     border-bottom: 2px solid #BF8C2C;
     margin-right: 25px;
     padding-bottom: 2px;
@@ -8257,7 +8263,7 @@ body {
   .quickbox__image {
     background: url("../images/werkwijze-thumb.jpg") center center;
     background-size: cover;
-    height: 152px;
+    height: 162px;
     width: 100px;
     float: left;
     margin-right: 20px; }
@@ -8288,7 +8294,7 @@ body {
       float: left;
       width: 100%; } }
   .streamer__title {
-    font-size: 2em;
+    font-size: 2.4rem;
     color: #929292;
     text-align: center; }
     .streamer__title strong,
@@ -8357,25 +8363,26 @@ body {
     .highlightbox--search .highlightbox__image {
       display: none; }
   .highlightbox__title {
-    font-size: 2em;
-    line-height: 1em;
+    font-size: 2.6rem;
+    line-height: 2.5rem;
     font-weight: bold;
     color: #826d61; }
   .highlightbox__subtitle {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
     color: #BF8C2C;
     margin-bottom: 20px;
     margin-top: 6px;
     font-weight: bold;
     text-transform: uppercase; }
   .highlightbox__copy {
-    color: #929292;
-    font-size: 1.3em;
-    line-height: 1.4em; }
+    font-size: 1.6rem;
+    color: #929292; }
   .highlightbox__link {
     font-family: 'Corbel', sans-serif;
     display: inline-block;
     margin-top: 10px;
-    font-size: 1.2em;
+    font-size: 1.6rem;
     border-bottom: 2px solid #BF8C2C;
     margin-right: 25px;
     padding-bottom: 2px;
@@ -8415,6 +8422,4 @@ body {
     clear: both;
     height: 0; }
   .footer__content {
-    font-size: 1.2em;
-    line-height: 1.5em;
     padding: 0; }
