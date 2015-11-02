@@ -6061,12 +6061,15 @@ button.close {
     display: none !important; } }
 
 .content {
-  width: 66.3%;
+  width: 100%;
   position: relative;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
   float: left; }
+  @media (min-width: 645px) {
+    .content {
+      width: 66.3%; } }
   .content__headings {
     margin-top: 30px;
     margin-bottom: 20px;
@@ -6087,13 +6090,16 @@ button.close {
       text-transform: uppercase; }
 
 .sidebar {
-  width: 33.3%;
+  width: 100%;
   position: relative;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
   float: left;
   margin-top: 30px; }
+  @media (min-width: 645px) {
+    .sidebar {
+      width: 33.3%; } }
 
 .search {
   background: #c4d2df;
@@ -6102,7 +6108,7 @@ button.close {
   margin: 0;
   margin-bottom: 20px; }
   .search__input {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     width: 100%;
     border: 0;
     padding: 6px 6px 3px 6px;
@@ -8269,7 +8275,12 @@ a {
     font-size: 0.9rem;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    background: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); }
+    @media (min-width: 768px) {
+      .navbar-collapse {
+        box-shadow: none; } }
   .navbar a {
     color: #826d61; }
     .navbar a .caret {
@@ -8277,8 +8288,11 @@ a {
   .navbar-nav > li {
     font-size: 1.1rem; }
     .navbar-nav > li > a {
-      padding: 4px 10px;
-      margin: 33px 4px; }
+      margin: 10px 10px;
+      padding: 4px 10px; }
+      @media (min-width: 1200px) {
+        .navbar-nav > li > a {
+          margin: 33px 4px; } }
       .navbar-nav > li > a.active {
         background: #826d61;
         text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.9);

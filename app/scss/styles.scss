@@ -113,6 +113,11 @@ a {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
+    background: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    @media (min-width: $screen-sm) {
+      box-shadow: none;
+    }
   }
   a {
     color: $primary-color;
@@ -124,8 +129,12 @@ a {
     > li {
       font-size: 1.1rem;
       > a {
+        margin: 10px 10px;
         padding: 4px 10px;
-        margin: 33px 4px;
+        @media (min-width: $screen-lg) {
+          margin: 33px 4px;
+        }
+
         &.active {
           background: $primary-color;
           text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.9);
