@@ -6098,7 +6098,7 @@ button.close {
 .search {
   background: #c4d2df;
   padding: 20px;
-  border-radius: 4px;
+  border-radius: 0px 0px 4px 4px;
   margin: 0;
   margin-bottom: 20px; }
   .search__input {
@@ -6139,6 +6139,36 @@ button.close {
       text-decoration: none; }
     .search__icon:hover {
       opacity: 0.8; }
+
+.subnav {
+  background: #eff3f6;
+  padding: 20px 20px 5px 20px;
+  border-radius: 4px 4px 0 0; }
+  .subnav__title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #BF8C2C;
+    margin-top: 1px; }
+  .subnav__list {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0; }
+    .subnav__list__item {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+      .subnav__list__item:last-child {
+        border: none; }
+    .subnav__list__link {
+      padding: 6px 6px 6px 20px;
+      display: block;
+      color: #826d61;
+      margin-left: -20px;
+      margin-right: -20px; }
+      .subnav__list__link:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: black;
+        text-decoration: none; }
 
 /*!
  *  Font Awesome 4.4.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -8166,6 +8196,9 @@ body {
 
 p {
   font-size: 1.6rem; }
+
+a {
+  color: #826d61; }
 
 .container-fluid {
   max-width: 980px;

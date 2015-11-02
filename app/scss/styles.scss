@@ -25,6 +25,10 @@ p {
   font-size: 1.6rem;
 }
 
+a {
+  color: $primary-color;
+}
+
 .container-fluid {
   max-width: 980px;
   margin: 0 auto;
