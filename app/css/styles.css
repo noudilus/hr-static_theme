@@ -6069,7 +6069,8 @@ button.close {
   float: left; }
   @media (min-width: 645px) {
     .content {
-      width: 66.3%; } }
+      width: 66.3%;
+      padding-right: 30px; } }
   .content__headings {
     margin-top: 30px;
     margin-bottom: 20px;
@@ -8266,11 +8267,16 @@ a {
         position: relative;
         height: auto; } }
   .navbar-toggle {
-    font-size: 1.6rem;
+    font-size: 2rem;
     margin-top: 3px; }
     .navbar-toggle__label {
       margin-top: -2px;
-      display: none; }
+      margin-right: 4px;
+      font-size: 1.4rem;
+      position: absolute;
+      right: 30px;
+      top: 10px;
+      font-weight: bold; }
   .navbar-collapse {
     font-size: 0.9rem;
     font-weight: bold;
@@ -8344,14 +8350,14 @@ a {
       width: 8px;
       height: 13px;
       top: 50%;
-      margin-top: -18px;
+      margin-top: -13px;
       position: absolute;
       right: 0;
       font-size: 21px; }
 
 .quickboxes {
   margin-top: -200px;
-  margin-bottom: 48px;
+  margin-bottom: 38px;
   z-index: 2;
   position: relative; }
 
@@ -8371,21 +8377,13 @@ a {
       float: left;
       width: 50%; } }
   .quickbox__title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #826d61;
     margin-bottom: 6px; }
   .quickbox__copy {
-    font-size: 1.6rem; }
-  .quickbox__link {
-    font-family: 'Corbel', sans-serif;
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 1.6rem;
-    border-bottom: 2px solid #BF8C2C;
-    margin-right: 25px;
-    padding-bottom: 2px;
-    position: relative; }
+    font-size: 1.5rem;
+    line-height: 1.8rem; }
   .quickbox__image {
     background: url("../images/werkwijze-thumb.jpg") center center;
     background-size: cover;
@@ -8407,8 +8405,18 @@ a {
     background: white;
     height: auto; }
 
+.link {
+  font-family: 'Corbel', sans-serif;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #BF8C2C;
+  margin-right: 25px;
+  padding-bottom: 2px;
+  position: relative; }
+
 .streamerbox {
-  padding: 30px 0; }
+  padding: 30px 0 40px 0; }
 
 .streamer {
   position: relative;
@@ -8427,70 +8435,25 @@ a {
     .streamer__title .fa {
       color: #000; }
 
-.highlighted {
-  z-index: 2;
-  margin-top: 0;
-  position: relative; }
+.highlightblock {
+  width: 100%;
+  position: relative;
+  min-height: 1px;
+  float: left; }
+  @media (min-width: 645px) {
+    .highlightblock {
+      width: 66.3%; } }
 
 .highlightbox {
-  border-radius: 10px;
   float: left;
+  width: 50%;
   position: relative;
-  float: left;
-  width: 100%;
   min-height: 1px;
-  padding-left: 15px;
   padding-right: 15px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px; }
-  @media (min-width: 768px) {
-    .highlightbox {
-      float: left;
-      width: 33.33333%; } }
-  .highlightbox--info {
-    background: #DEE6ED;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 20px; }
-    .highlightbox--info .highlightbox__inner {
-      margin: 0;
-      padding: 30px;
-      border-left: 25px solid white;
-      border-right: 15px solid white; }
-    .highlightbox--info .highlightbox__title {
-      padding: 0 0 10px 0;
-      margin: 0; }
-    .highlightbox--info .highlightbox__image {
-      display: none; }
-  .highlightbox--search {
-    background: #c4d2df;
-    border-radius: 10px;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 20px; }
-    .highlightbox--search .highlightbox__input {
-      width: 100%;
-      border: 0;
-      padding: 6px 6px 3px 6px;
-      box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
-      border-bottom: solid 1px rgba(0, 0, 0, 0.1); }
-      .highlightbox--search .highlightbox__input:after {
-        content: "q"; }
-    .highlightbox--search .highlightbox__inner {
-      margin: 0;
-      padding: 30px;
-      border-left: 25px solid white;
-      border-right: 15px solid white; }
-    .highlightbox--search .highlightbox__title {
-      padding: 0 0 10px 0;
-      margin: 0; }
-    .highlightbox--search .highlightbox__image {
-      display: none; }
+  padding-left: 15px; }
   .highlightbox__title {
-    font-size: 2.6rem;
-    line-height: 2.5rem;
+    font-size: 2.4rem;
+    line-height: 2.2rem;
     font-weight: bold;
     color: #826d61; }
   .highlightbox__subtitle {
@@ -8536,9 +8499,10 @@ a {
     padding: 20px 30px 20px 0; }
 
 .footer {
+  background: #826d61;
+  color: #fff;
+  font-size: 1.5rem;
   padding: 50px 0;
-  border-top: 10px solid #826d61;
-  border-bottom: 10px solid white;
   margin-top: 50px; }
   .footer:after {
     visibility: hidden;
@@ -8547,5 +8511,57 @@ a {
     content: " ";
     clear: both;
     height: 0; }
+  .footer .fa {
+    color: #fff;
+    width: 16px; }
+  .footer__link {
+    color: #ddd6d2; }
+  .footer__title {
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 6px; }
   .footer__content {
+    color: #ddd6d2;
     padding: 0; }
+
+.sidebar--top {
+  margin-top: 0; }
+
+.attention {
+  background: #e5ebf1;
+  padding: 20px;
+  border-radius: 0 0 5px 5px;
+  margin: 0;
+  margin-bottom: 20px; }
+  .attention__wrapper {
+    position: relative; }
+  .attention__title {
+    font-size: 2rem;
+    line-height: 2.2rem;
+    font-weight: bold;
+    color: #BF8C2C;
+    margin-bottom: 10px; }
+  .attention__subtitle {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: #BF8C2C;
+    margin-bottom: 20px;
+    margin-top: 6px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  .attention__copy {
+    font-size: 1.4rem;
+    font-family: georgia;
+    font-style: italic; }
+    .attention__copy:before {
+      font-size: 2rem;
+      opacity: 0.5;
+      content: open-quote; }
+    .attention__copy:after {
+      font-size: 2rem;
+      opacity: 0.5;
+      content: close-quote; }
+
+.search--top {
+  border-radius: 5px 5px 0 0; }

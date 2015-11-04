@@ -101,11 +101,16 @@ a {
 
   }
   &-toggle {
-    font-size: 1.6rem;
+    font-size: 2rem;
     margin-top: 3px;
     &__label {
       margin-top: -2px;
-      display: none;
+      margin-right: 4px;
+      font-size: 1.4rem;
+      position: absolute;
+      right: 30px;
+      top: 10px;
+      font-weight: bold;
     }
   }
   &-collapse {
@@ -195,7 +200,7 @@ a {
       width: 8px;
       height: 13px;
       top: 50%;
-      margin-top: -18px;
+      margin-top: -13px;
       position: absolute;
       right: 0;
       font-size: 21px;
@@ -205,7 +210,7 @@ a {
 
 .quickboxes {
   margin-top: -200px;
-  margin-bottom: 48px;
+  margin-bottom: 38px;
   z-index: 2;
   position: relative;
 
@@ -216,25 +221,15 @@ a {
   @include make-sm-column(6);
 
   &__title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
     color: $primary-color;
     margin-bottom: 6px;
   }
 
   &__copy {
-    font-size: 1.6rem;
-  }
-
-  &__link {
-    font-family: 'Corbel', sans-serif;
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 1.6rem;
-    border-bottom: 2px solid $secondary-color;
-    margin-right: 25px;
-    padding-bottom: 2px;
-    position: relative;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
   }
 
   &__image {
@@ -267,13 +262,23 @@ a {
   }
 }
 
+.link {
+    font-family: 'Corbel', sans-serif;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.6rem;
+    border-bottom: 2px solid $secondary-color;
+    margin-right: 25px;
+    padding-bottom: 2px;
+    position: relative;
+
+}
+
 .streamerbox {
-  padding: 30px 0;
+  padding: 30px 0 40px 0;
 }
 
 .streamer {
-  //border-top: 1px solid rgba(200,200,200,0.35);
-  //border-bottom: 1px solid rgba(200,200,200,0.35);
   @include make-sm-column(12);
 
   &__title {
@@ -288,82 +293,29 @@ a {
   }
 }
 
-.highlighted {
-  z-index: 2;
-  margin-top: 0;
-  //padding: 26px 0;
+.highlightblock {
+  width: 100%;
   position: relative;
+  min-height: 1px;
+  float: left;
+
+  @media (min-width: 645px) {
+    width: 66.3%;
+  }
 }
 
 .highlightbox {
-  @include border-radius(10px);
   float: left;
-  @include make-xs-column(12);
-  @include make-sm-column(4);
+  width: 50%;
 
-  &--info {
-    background: $lightblue-color;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 20px;
-
-    & .highlightbox__inner {
-      margin: 0;
-      padding: 30px;
-      border-left: 25px solid white;
-      border-right: 15px solid white;
-    }
-
-    & .highlightbox__title {
-      padding: 0 0 10px 0;
-      margin: 0;
-    }
-
-    & .highlightbox__image {
-      display: none;
-    }
-  }
-
-  &--search {
-    background: darken($lightblue-color, 8%);
-    @include border-radius(10px);
-    padding: 0;
-    margin: 0;
-    margin-bottom: 20px;
-
-    & .highlightbox__input {
-      width: 100%;
-      border: 0;
-      padding: 6px 6px 3px 6px;
-      box-shadow: 0 -1px 1px rgba(0,0,0,0.1);
-      border-bottom: solid 1px rgba(0,0,0,0.1);
-
-      &:after {
-        content: "q";
-
-      }
-    }
-
-    & .highlightbox__inner {
-      margin: 0;
-      padding: 30px;
-      border-left: 25px solid white;
-      border-right: 15px solid white;
-    }
-
-    & .highlightbox__title {
-      padding: 0 0 10px 0;
-      margin: 0;
-    }
-
-    & .highlightbox__image {
-      display: none;
-    }
-  }
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
 
   &__title {
-    font-size: 2.6rem;
-    line-height: 2.5rem;
+    font-size: 2.4rem;
+    line-height: 2.2rem;
     font-weight: bold;
     color: $primary-color;
   }
@@ -414,28 +366,94 @@ a {
 
   &__inner {
     border-radius: 4px;
-    //box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    //border: 1px solid #e5e5e5;
     height: auto;
     padding: 20px 30px 20px 0;
   }
 }
 
 .footer {
-  //background: url('http://www.hansraaijmakers.nl/wp-content/themes/hans/img/bg.jpg');
+  background: $primary-color;
+  color: #fff;
+  font-size: 1.5rem;
   padding: 50px 0;
-  border-top: 10px solid $primary-color;
-  border-bottom: 10px solid white;
   margin-top: 50px;
-
   @include clearfix;
+  
+  & .fa {
+    color: #fff;
+    width: 16px;
+  }
+
+  &__link {
+    color: lighten($primary-color, 40%);
+  }
+
+  &__title {
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
 
   &__content {
-
+    color: lighten($primary-color, 40%);
     padding: 0;
     @extend .col-sm-3;
   }
 }
 
+.sidebar {
+  &--top {
+    margin-top: 0;
+  }
+}
 
+.attention {
+  background: lighten($lightblue-color, 2%);
+  padding: 20px;
+  @include border-radius(0 0 5px 5px);
+  margin: 0;
+  margin-bottom: 20px;
 
+  &__wrapper {
+    position: relative;
+  }
+
+  &__title {
+    font-size: 2rem;
+    line-height: 2.2rem;
+    font-weight: bold;
+    color: $secondary-color;
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: $secondary-color;
+    margin-bottom: 20px;
+    margin-top: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__copy {
+    font-size: 1.4rem;
+    font-family: georgia;
+    font-style: italic;
+    &:before {
+      font-size: 2rem;
+      opacity: 0.5;
+      content: open-quote;
+    }
+    &:after {
+      font-size: 2rem;
+      opacity: 0.5;
+      content: close-quote;
+    }
+  }
+}
+
+.search--top {
+  @include border-radius(5px 5px 0 0);
+}
