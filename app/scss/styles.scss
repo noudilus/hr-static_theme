@@ -88,7 +88,7 @@ a {
 
   &-brand {
     float: left;
-    padding: 5px 0 0 10px;
+    padding: 8px 0 0 0;
     overflow: hidden;
     position: absolute;
     height: 45px;
@@ -174,6 +174,11 @@ a {
       font-style: italic;
       font-weight: bold;
     }
+    
+    &--small {
+      margin-top: 50px;
+      font-size: 1.4rem;
+    }
   }
   &__subtitle {
     color: white;
@@ -221,10 +226,11 @@ a {
   @include make-sm-column(6);
 
   &__title {
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: bold;
     color: $primary-color;
-    margin-bottom: 6px;
+    margin-top: 8px;
+    margin-bottom: 10px;
   }
 
   &__copy {
@@ -275,14 +281,17 @@ a {
 }
 
 .streamerbox {
-  padding: 30px 0 40px 0;
+  padding: 25px 0;
+  margin-bottom: 25px;
+  border-bottom: 1px solid $grey-color-1;
+
 }
 
 .streamer {
   @include make-sm-column(12);
 
   &__title {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     color: #929292;
     text-align: center;
 
@@ -315,19 +324,19 @@ a {
 
   &__title {
     font-size: 2.4rem;
-    line-height: 2.2rem;
+    line-height: 2.4rem;
     font-weight: bold;
     color: $primary-color;
   }
 
   &__subtitle {
-    font-size: 1.4rem;
-    line-height: 1.6rem;
+    font-size: 1.7rem;
+    line-height: 1.7rem;
     color: $secondary-color;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     margin-top: 6px;
-    font-weight: bold;
-    text-transform: uppercase;
+    //font-weight: bold;
+    //text-transform: uppercase;
   }
 
   &__copy {
@@ -347,20 +356,13 @@ a {
   }
 
   &__image {
-    background: url("../images/werkwijze-thumb.jpg") center center;
-    background-size: cover;
-    height: 152px;
-    width: 100%;
-    margin-right: 20px;
+    img {
+      @include border-radius(5px 5px 0 0);
+      background-size: cover;
+      width: 100%;
+      margin-right: 20px;
 
-    @include clearfix;
-
-    &--first {
-      background-image: url("../images/rozen.jpg");
-    }
-
-    &--second {
-      background-image: url("../images/bg2.jpg");
+      @include clearfix;
     }
   }
 
@@ -375,8 +377,8 @@ a {
   background: $primary-color;
   color: #fff;
   font-size: 1.5rem;
-  padding: 50px 0;
-  margin-top: 50px;
+  padding: 50px 0 0 0;
+  margin-top: 30px;
   @include clearfix;
   
   & .fa {
@@ -400,6 +402,12 @@ a {
     padding: 0;
     @extend .col-sm-3;
   }
+
+  &__sub {
+    background: darken($primary-color, 3%);
+    position: relative;
+  }
+
 }
 
 .sidebar {
@@ -438,9 +446,11 @@ a {
   }
 
   &__copy {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    line-height: 2.3rem;
     font-family: georgia;
     font-style: italic;
+    color: lighten($darkgray-color,10%);
     &:before {
       font-size: 2rem;
       opacity: 0.5;
@@ -456,4 +466,74 @@ a {
 
 .search--top {
   @include border-radius(5px 5px 0 0);
+}
+
+.book {
+  background: lighten($primary-color, 49%);
+  margin-top: 30px;
+  display: block;
+  transition: 0.4s all ease-in-out;
+  &:hover {
+    background: lighten($primary-color, 46%);
+    text-decoration: none;
+    & .book__image {
+      transform:scale(1.1);
+    }
+  }
+  @include border-radius(0 5px 5px 5px);
+  & .fa {
+    font-size: 1.3rem;
+  }
+  &__wrapper {
+    padding: 10px 0;
+  }
+  &__image {
+    background: url('http://www.hansraaijmakers.nl/wp-content/uploads/2013/03/boekje2.png');
+    background-size: cover;
+    width: 75px;
+    height: 100px;
+    float: left;
+    margin-top: -20px;
+    margin-right: 5px;
+    transition: 0.4s all ease-in-out;
+    &:hover {
+    }
+  }
+  &__title {
+    font-size: 1.7rem;
+    color: $primary-color;
+    display: block;
+    font-weight: bold;
+  }
+  &__subtitle {
+    font-size: 1.6rem;
+    display: block;
+    color: $secondary-color;
+  }
+}
+
+.information {
+  margin-top: 25px;
+  padding: 20px 0;
+  & .fa {
+    font-size: 1.3rem;
+    padding-right: 3px;
+  }
+  &__title {
+    font-size: 2rem;
+    line-height: 2.2rem;
+    font-weight: bold;
+    color: $secondary-color;
+    margin-bottom: 10px;
+  }
+  &__link {
+    color: $darkgray-color;
+    border-bottom: 1px solid $grey-color-1;
+    margin-top: 4px;
+    font-size: 1.6rem;
+    padding: 10px 0;
+    &:first-child {
+      border-top: 1px solid $grey-color-1;
+    }
+  }
 }

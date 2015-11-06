@@ -8257,7 +8257,7 @@ a {
       min-height: 105px; } }
   .navbar-brand {
     float: left;
-    padding: 5px 0 0 10px;
+    padding: 8px 0 0 0;
     overflow: hidden;
     position: absolute;
     height: 45px; }
@@ -8327,6 +8327,9 @@ a {
     .proposition__title--italic {
       font-style: italic;
       font-weight: bold; }
+    .proposition__title--small {
+      margin-top: 50px;
+      font-size: 1.4rem; }
   .proposition__subtitle {
     color: white;
     font-size: 2rem;
@@ -8377,10 +8380,11 @@ a {
       float: left;
       width: 50%; } }
   .quickbox__title {
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: bold;
     color: #826d61;
-    margin-bottom: 6px; }
+    margin-top: 8px;
+    margin-bottom: 10px; }
   .quickbox__copy {
     font-size: 1.5rem;
     line-height: 1.8rem; }
@@ -8416,7 +8420,9 @@ a {
   position: relative; }
 
 .streamerbox {
-  padding: 30px 0 40px 0; }
+  padding: 25px 0;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #EBE9E8; }
 
 .streamer {
   position: relative;
@@ -8428,7 +8434,7 @@ a {
       float: left;
       width: 100%; } }
   .streamer__title {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     color: #929292;
     text-align: center; }
     .streamer__title strong,
@@ -8453,17 +8459,15 @@ a {
   padding-left: 15px; }
   .highlightbox__title {
     font-size: 2.4rem;
-    line-height: 2.2rem;
+    line-height: 2.4rem;
     font-weight: bold;
     color: #826d61; }
   .highlightbox__subtitle {
-    font-size: 1.4rem;
-    line-height: 1.6rem;
+    font-size: 1.7rem;
+    line-height: 1.7rem;
     color: #BF8C2C;
-    margin-bottom: 20px;
-    margin-top: 6px;
-    font-weight: bold;
-    text-transform: uppercase; }
+    margin-bottom: 16px;
+    margin-top: 6px; }
   .highlightbox__copy {
     font-size: 1.6rem;
     color: #929292; }
@@ -8476,23 +8480,18 @@ a {
     margin-right: 25px;
     padding-bottom: 2px;
     position: relative; }
-  .highlightbox__image {
-    background: url("../images/werkwijze-thumb.jpg") center center;
+  .highlightbox__image img {
+    border-radius: 5px 5px 0 0;
     background-size: cover;
-    height: 152px;
     width: 100%;
     margin-right: 20px; }
-    .highlightbox__image:after {
+    .highlightbox__image img:after {
       visibility: hidden;
       display: block;
       font-size: 0;
       content: " ";
       clear: both;
       height: 0; }
-    .highlightbox__image--first {
-      background-image: url("../images/rozen.jpg"); }
-    .highlightbox__image--second {
-      background-image: url("../images/bg2.jpg"); }
   .highlightbox__inner {
     border-radius: 4px;
     height: auto;
@@ -8502,8 +8501,8 @@ a {
   background: #826d61;
   color: #fff;
   font-size: 1.5rem;
-  padding: 50px 0;
-  margin-top: 50px; }
+  padding: 50px 0 0 0;
+  margin-top: 30px; }
   .footer:after {
     visibility: hidden;
     display: block;
@@ -8524,6 +8523,9 @@ a {
   .footer__content {
     color: #ddd6d2;
     padding: 0; }
+  .footer__sub {
+    background: #79665a;
+    position: relative; }
 
 .sidebar--top {
   margin-top: 0; }
@@ -8551,9 +8553,11 @@ a {
     font-weight: bold;
     text-transform: uppercase; }
   .attention__copy {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    line-height: 2.3rem;
     font-family: georgia;
-    font-style: italic; }
+    font-style: italic;
+    color: gray; }
     .attention__copy:before {
       font-size: 2rem;
       opacity: 0.5;
@@ -8565,3 +8569,58 @@ a {
 
 .search--top {
   border-radius: 5px 5px 0 0; }
+
+.book {
+  background: #f1eeec;
+  margin-top: 30px;
+  display: block;
+  transition: 0.4s all ease-in-out;
+  border-radius: 0 5px 5px 5px; }
+  .book:hover {
+    background: #eae6e3;
+    text-decoration: none; }
+    .book:hover .book__image {
+      transform: scale(1.1); }
+  .book .fa {
+    font-size: 1.3rem; }
+  .book__wrapper {
+    padding: 10px 0; }
+  .book__image {
+    background: url("http://www.hansraaijmakers.nl/wp-content/uploads/2013/03/boekje2.png");
+    background-size: cover;
+    width: 75px;
+    height: 100px;
+    float: left;
+    margin-top: -20px;
+    margin-right: 5px;
+    transition: 0.4s all ease-in-out; }
+  .book__title {
+    font-size: 1.7rem;
+    color: #826d61;
+    display: block;
+    font-weight: bold; }
+  .book__subtitle {
+    font-size: 1.6rem;
+    display: block;
+    color: #BF8C2C; }
+
+.information {
+  margin-top: 25px;
+  padding: 20px 0; }
+  .information .fa {
+    font-size: 1.3rem;
+    padding-right: 3px; }
+  .information__title {
+    font-size: 2rem;
+    line-height: 2.2rem;
+    font-weight: bold;
+    color: #BF8C2C;
+    margin-bottom: 10px; }
+  .information__link {
+    color: #666666;
+    border-bottom: 1px solid #EBE9E8;
+    margin-top: 4px;
+    font-size: 1.6rem;
+    padding: 10px 0; }
+    .information__link:first-child {
+      border-top: 1px solid #EBE9E8; }
