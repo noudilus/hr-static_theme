@@ -8204,9 +8204,6 @@ body {
 p {
   font-size: 1.6rem; }
 
-a {
-  color: #826d61; }
-
 .container-fluid {
   max-width: 980px;
   margin: 0 auto;
@@ -8342,11 +8339,21 @@ a {
     font-family: 'Corbel', sans-serif;
     display: inline;
     font-size: 2rem;
+    color: white;
     border-bottom: 2px solid #BF8C2C;
     margin-right: 25px;
     padding-bottom: 4px;
     position: relative;
-    padding-right: 15px; }
+    padding-right: 15px;
+    -webkit-transition: 0.2s all ease-in-out;
+    -moz-transition: 0.2s all ease-in-out;
+    -ms-transition: 0.2s all ease-in-out;
+    -o-transition: 0.2s all ease-in-out;
+    transition: 0.2s all ease-in-out; }
+    .proposition__cta:hover {
+      text-decoration: none;
+      border-color: #e3c387;
+      color: white; }
     .proposition__cta:after {
       content: " ";
       font-family: 'FontAwesome';
@@ -8411,13 +8418,23 @@ a {
 
 .link {
   font-family: 'Corbel', sans-serif;
+  color: #333333;
   display: inline-block;
   margin-top: 10px;
   font-size: 1.6rem;
   border-bottom: 2px solid #BF8C2C;
   margin-right: 25px;
   padding-bottom: 2px;
-  position: relative; }
+  position: relative;
+  -webkit-transition: 0.2s all ease-in-out;
+  -moz-transition: 0.2s all ease-in-out;
+  -ms-transition: 0.2s all ease-in-out;
+  -o-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out; }
+  .link:hover {
+    text-decoration: none;
+    border-color: #e3c387;
+    color: black; }
 
 .streamerbox {
   padding: 25px 0;
@@ -8471,15 +8488,6 @@ a {
   .highlightbox__copy {
     font-size: 1.6rem;
     color: #929292; }
-  .highlightbox__link {
-    font-family: 'Corbel', sans-serif;
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 1.6rem;
-    border-bottom: 2px solid #BF8C2C;
-    margin-right: 25px;
-    padding-bottom: 2px;
-    position: relative; }
   .highlightbox__image img {
     border-radius: 5px 5px 0 0;
     background-size: cover;
@@ -8514,7 +8522,11 @@ a {
     color: #fff;
     width: 16px; }
   .footer__link {
+    display: block;
     color: #ddd6d2; }
+    .footer__link:hover {
+      color: #eae6e3;
+      text-decoration: none; }
   .footer__title {
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
     color: white;
@@ -8553,9 +8565,9 @@ a {
     font-weight: bold;
     text-transform: uppercase; }
   .attention__copy {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 2.3rem;
-    font-family: georgia;
+    font-family: 'Droid Serif', Georgia, sans-serif;
     font-style: italic;
     color: gray; }
     .attention__copy:before {
@@ -8574,12 +8586,20 @@ a {
   background: #f1eeec;
   margin-top: 30px;
   display: block;
-  transition: 0.4s all ease-in-out;
+  -webkit-transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
+  -ms-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
   border-radius: 0 5px 5px 5px; }
   .book:hover {
     background: #eae6e3;
     text-decoration: none; }
     .book:hover .book__image {
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
       transform: scale(1.1); }
   .book .fa {
     font-size: 1.3rem; }
@@ -8608,6 +8628,11 @@ a {
   margin-top: 25px;
   padding: 20px 0; }
   .information .fa {
+    -webkit-transition: 0.2s all ease-in-out;
+    -moz-transition: 0.2s all ease-in-out;
+    -ms-transition: 0.2s all ease-in-out;
+    -o-transition: 0.2s all ease-in-out;
+    transition: 0.2s all ease-in-out;
     font-size: 1.3rem;
     padding-right: 3px; }
   .information__title {
@@ -8621,6 +8646,18 @@ a {
     border-bottom: 1px solid #EBE9E8;
     margin-top: 4px;
     font-size: 1.6rem;
-    padding: 10px 0; }
+    padding: 10px 0;
+    display: block;
+    -webkit-transition: 0.2s all ease-in-out;
+    -moz-transition: 0.2s all ease-in-out;
+    -ms-transition: 0.2s all ease-in-out;
+    -o-transition: 0.2s all ease-in-out;
+    transition: 0.2s all ease-in-out; }
     .information__link:first-child {
       border-top: 1px solid #EBE9E8; }
+    .information__link:hover {
+      color: black;
+      text-decoration: none; }
+      .information__link:hover .fa {
+        padding-right: 5px;
+        color: #BF8C2C; }

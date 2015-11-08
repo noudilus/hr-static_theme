@@ -2,6 +2,7 @@ $primary-color: #826d61;
 $secondary-color: #BF8C2C;
 $secondary-color-variant1: #D8B011;
 $grey-color-1: #EBE9E8;
+$dark-color: #333333;
 $darkgray-color: #666666;
 $lightblue-color: #DEE6ED;
 
@@ -13,4 +14,12 @@ $lightblue-color: #DEE6ED;
 
 @mixin border-radius($size){
   border-radius: $size;
+}
+
+@mixin transition($time, $all, $ease) {
+  -webkit-transition: $time $all $ease;
+  -moz-transition: $time $all $ease;
+  -ms-transition: $time $all $ease;
+  -o-transition: $time $all $ease;
+  transition: $time $all $ease;
 }
