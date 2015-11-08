@@ -34,7 +34,6 @@ p {
 .hero {
   background: url('../images/bg1.jpg') no-repeat center top;
   background-size: cover;
-  //max-width: 1200px;
   margin: 0 auto;
   height: 575px;
   padding-top: 140px;
@@ -151,6 +150,13 @@ p {
     font-size: 1.4rem;
     text-transform: none;
     border: 0;
+    & > li {
+      letter-spacing: 0;
+      font-size: 1.5rem;
+      & a:hover {
+        color: $secondary-color;
+      }
+    }
   }
 }
 
@@ -198,7 +204,7 @@ p {
 
     &:hover {
       text-decoration: none;
-      border-color: lighten($secondary-color,25%);
+      border-color: lighten($secondary-color, 25%);
       color: white;
     }
 
@@ -232,7 +238,7 @@ p {
     font-size: 2.1rem;
     font-weight: bold;
     color: $primary-color;
-    margin-top: 8px;
+    margin-top: 4px;
     margin-bottom: 10px;
   }
 
@@ -249,7 +255,7 @@ p {
     float: left;
     margin-right: 20px;
 
-    @media (min-width: 400px){
+    @media (min-width: 400px) {
       width: 165px;
     }
 
@@ -272,22 +278,22 @@ p {
 }
 
 .link {
-    font-family: 'Corbel', sans-serif;
-    color: $dark-color;
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 1.6rem;
-    border-bottom: 2px solid $secondary-color;
-    margin-right: 25px;
-    padding-bottom: 2px;
-    position: relative;
-    @include transition(0.20s, all, ease-in-out);
+  font-family: 'Corbel', sans-serif;
+  color: $dark-color;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1.6rem;
+  border-bottom: 2px solid $secondary-color;
+  margin-right: 25px;
+  padding-bottom: 2px;
+  position: relative;
+  @include transition(0.20s, all, ease-in-out);
 
-    &:hover {
-      text-decoration: none;
-      border-color: lighten($secondary-color,25%);
-      color: darken($secondary-color,100%);
-    }
+  &:hover {
+    text-decoration: none;
+    border-color: lighten($secondary-color, 25%);
+    color: darken($secondary-color, 100%);
+  }
 }
 
 .streamerbox {
@@ -306,7 +312,7 @@ p {
     text-align: center;
 
     & strong,
-    .fa{
+    .fa {
       color: #000;
     }
   }
@@ -395,7 +401,7 @@ p {
   }
 
   &__title {
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
     color: white;
     font-weight: bold;
     margin-bottom: 6px;
@@ -404,7 +410,7 @@ p {
   &__content {
     color: lighten($primary-color, 40%);
     padding: 0;
-    @extend .col-sm-3;
+    margin-bottom: 20px;
   }
 
   &__sub {
@@ -454,7 +460,7 @@ p {
     line-height: 2.3rem;
     font-family: 'Droid Serif', Georgia, sans-serif;
     font-style: italic;
-    color: lighten($darkgray-color,10%);
+    color: lighten($darkgray-color, 10%);
     &:before {
       font-size: 2rem;
       opacity: 0.5;
@@ -536,7 +542,7 @@ p {
     margin-bottom: 10px;
   }
   &__link {
-    color: $darkgray-color;
+    color: $dark-color;
     border-bottom: 1px solid $grey-color-1;
     margin-top: 4px;
     font-size: 1.6rem;
@@ -544,16 +550,31 @@ p {
     display: block;
     @include transition(0.20s, all, ease-in-out);
 
-    &:first-child {
-      border-top: 1px solid $grey-color-1;
+    @media (min-width: $screen-xs-max) {
+      &:first-child {
+        border-top: 1px solid $grey-color-1;
+      }
     }
+
     &:hover {
-      color: darken($secondary-color,100%);
+      color: darken($secondary-color, 100%);
       text-decoration: none;
+      border-bottom: 1px solid $secondary-color;
       & .fa {
         padding-right: 5px;
         color: $secondary-color;
       }
+    }
+
+    &__copy {
+      font-family: 'Droid Serif', sans-serif;
+      font-style: italic;
+      display: block;
+      font-size: 1.3rem;
+      line-height: 1.8rem;
+      padding-right: 40px;
+      color: lighten($darkgray-color, 20%);
+      margin-left: 18px;
     }
   }
 }
