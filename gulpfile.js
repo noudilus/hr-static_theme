@@ -32,11 +32,20 @@ gulp.task('sass', function() {
           './node_modules/font-awesome/scss'
         ]
       })) // Passes it through a gulp-sass
-    .pipe(gulp.dest('app/css')) // Outputs it in the css folder
+      .on('error', swallowError)
+      .pipe(gulp.dest('app/css')) // Outputs it in the css folder
     .pipe(browserSync.reload({ // Reloading with Browser Sync
       stream: true
     }));
 })
+
+function swallowError (error) {
+
+  // If you want details of the error in the console
+  console.log(error.toString());
+
+  this.emit('end');
+}
 
 // Watchers
 gulp.task('watch', function() {
