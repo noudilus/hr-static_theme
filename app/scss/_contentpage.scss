@@ -50,9 +50,9 @@
 }
 
 .search {
-  background: darken($lightblue-color, 8%);
+  background: $lightblue-color;
   padding: 20px;
-  @include border-radius(0px 0px 4px 4px);
+  @include border-radius(4px 4px 4px 4px);
   margin: 0;
   margin-bottom: 20px;
 
