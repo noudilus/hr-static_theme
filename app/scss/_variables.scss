@@ -26,3 +26,14 @@ $font-family-02: 'Droid Serif', Georgia, sans-serif;
   -o-transition: $time $all $ease;
   transition: $time $all $ease;
 }
+
+@mixin clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
