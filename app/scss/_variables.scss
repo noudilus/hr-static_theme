@@ -5,6 +5,9 @@ $grey-color-1: #EBE9E8;
 $dark-color: #333333;
 $darkgray-color: #666666;
 $lightblue-color: #DEE6ED;
+$font-family-01: 'Corbel', Tahoma, sans-serif;
+$font-family-02: 'Droid Serif', Georgia, sans-serif;
+
 
 @mixin linear-gradient($direction, $color-stops...) {
   background: nth(nth($color-stops, 1), 1);

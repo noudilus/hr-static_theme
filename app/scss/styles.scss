@@ -21,7 +21,7 @@ html {
 }
 
 body {
-  font-family: 'Corbel', Arial, Helvetica, sans-serif;
+  font-family: $font-family-01;
 }
 
 p {
@@ -29,10 +29,11 @@ p {
 }
 
 a,
+a:hover,
 a:active,
 a:focus{
-  color: $primary-color;
-  text-decoration: none;
+  color: $secondary-color;
+  text-decoration: underline;
 }
 
 h1, h2, h3 {
@@ -96,11 +97,13 @@ h1, h2, h3 {
   top: 0;
   height: 50px;
   position: fixed;
-  z-index: 9999;
+  z-index: 99999999;
   background: #fff;
   @include transition(0.1s, min-height, ease-in-out);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
 
   @media (min-width: $screen-sm) {
+    box-shadow: none;
     min-height: 100px;
   }
 
@@ -119,11 +122,12 @@ h1, h2, h3 {
 
     &__label {
       margin-right: 0;
-      margin-top: -5px;
+      margin-top: -6px;
       font-size: 1.4rem;
       position: absolute;
       right: 26px;
       top: 10px;
+      color: $primary-color;
       font-weight: bold;
     }
   }
@@ -136,6 +140,7 @@ h1, h2, h3 {
     background: white;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     @media (min-width: $screen-sm) {
+      background: transparent;
       box-shadow: none;
     }
   }
@@ -165,6 +170,10 @@ h1, h2, h3 {
           & > li {
             letter-spacing: 0;
             font-size: 1.5rem;
+            text-decoration: none;
+            & a {
+              text-decoration: none;
+            }
             & a:hover {
               color: $secondary-color;
             }
@@ -178,6 +187,7 @@ h1, h2, h3 {
         }
       }
       > a {
+        text-decoration: none;
         font-size: 1.2rem;
         padding: 4px 7px;
         margin: 10px 2px;
@@ -300,7 +310,6 @@ h1, h2, h3 {
   }
 
   &__cta {
-    font-family: 'Corbel', sans-serif;
     font-size: 2rem;
     color: white;
     position: relative;
@@ -312,6 +321,7 @@ h1, h2, h3 {
     display: block;
     margin-top: 5px;
     width: 100%;
+    text-decoration: none;
 
     &:hover {
       text-decoration: none;
@@ -441,7 +451,7 @@ h1, h2, h3 {
 }
 
 .link {
-  font-family: 'Corbel', sans-serif;
+  font-family: $font-family-01;
   color: $dark-color;
   display: inline-block;
   margin-top: 10px;
@@ -451,6 +461,7 @@ h1, h2, h3 {
   padding-bottom: 2px;
   position: relative;
   @include transition(0.20s, all, ease-in-out);
+  text-decoration: none;
 
   &:hover {
     text-decoration: none;
@@ -486,9 +497,9 @@ h1, h2, h3 {
 
     & .fa {
       position: relative;
-      top: 4px;
+      top: 3px;
       font-size: 2.5rem;
-      right: -6px;
+      right: -5px;
       -webkit-transform: rotate(45deg);
       -moz-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
@@ -585,6 +596,7 @@ h1, h2, h3 {
   &__link {
     display: block;
     color: lighten($primary-color, 40%);
+    text-decoration: none;
     &:hover {
       color: lighten($primary-color, 46%);
       text-decoration: none;
@@ -641,9 +653,8 @@ h1, h2, h3 {
 .attention {
   background: lighten($primary-color, 49%);
   padding: 20px;
+  margin: 0 0 20px 0;
   @include border-radius(5px);
-  margin: 0;
-  margin-bottom: 20px;
 
   &__wrapper {
     position: relative;
@@ -654,7 +665,7 @@ h1, h2, h3 {
     line-height: 2.2rem;
     font-weight: bold;
     color: $primary-color;
-    margin-bottom: 2px;
+    margin-bottom: 10px;
   }
 
   &__subtitle {
@@ -677,21 +688,43 @@ h1, h2, h3 {
     }
   }
 
-  &__copy {
-    font-size: 1.3rem;
-    line-height: 2.2rem;
-    font-family: 'Droid Serif', Georgia, sans-serif;
-    font-style: italic;
-    color: lighten($darkgray-color, 3%);
-    &:before {
-      font-size: 2rem;
-      opacity: 0.5;
-      content: open-quote;
+  &__image {
+    img {
+      float: left;
+      margin-left: 0;
+      height: 68px;
+      margin-right: 20px;
+      @include border-radius(1px);
+      @media (min-width: $screen-sm-min) {
+        float: right;
+        width: 50%;
+        margin-right: 0;
+        margin-left: 10px;
+        height: auto;
+      }
     }
-    &:after {
-      font-size: 2rem;
-      opacity: 0.5;
-      content: close-quote;
+  }
+
+  &__copy {
+    font-family: $font-size-h1;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    color: lighten($darkgray-color, 3%);
+    &--quote {
+      font-family: $font-family-02;
+      font-style: italic;
+      font-size: 1.35rem;
+      line-height: 2.2rem;
+      &:before {
+        font-size: 2rem;
+        opacity: 0.5;
+        content: open-quote;
+      }
+      &:after {
+        font-size: 2rem;
+        opacity: 0.5;
+        content: close-quote;
+      }
     }
   }
 }
@@ -700,6 +733,7 @@ h1, h2, h3 {
   background: lighten($primary-color, 49%);
   margin-top: 30px;
   display: block;
+  text-decoration: none;
   @include transition(0.3s, background, ease-in-out);
   @media (min-width: 645px) and (max-width: 950px) {
     width: 400px;
@@ -749,7 +783,6 @@ h1, h2, h3 {
 }
 
 .information {
-  //margin-top: 25px;
   padding: 20px 0;
   & .fa {
     @include transition(0.20s, all, ease-in-out);
@@ -774,6 +807,7 @@ h1, h2, h3 {
     padding: 10px 0;
     border-bottom: 1px solid $grey-color-1;
     display: block;
+    text-decoration: none;
     @include transition(0.20s, color, ease-in-out);
 
     @media (min-width: $screen-xs-max) {

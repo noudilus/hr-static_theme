@@ -6060,6 +6060,12 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+.main {
+  margin: 45px auto 0 auto; }
+  @media (min-width: 768px) {
+    .main {
+      margin: 100px auto 0 auto; } }
+
 .content {
   width: 100%;
   position: relative;
@@ -6079,8 +6085,12 @@ button.close {
     .content__headings__title {
       font-weight: bold;
       color: #826d61;
-      margin: 0;
-      padding: 0; }
+      margin: 0 0 3px 0;
+      padding: 0;
+      font-size: 2.8rem; }
+      @media (min-width: 480px) {
+        .content__headings__title {
+          font-size: 3.6rem; } }
     .content__headings__subtitle {
       font-size: 1.3rem;
       font-weight: bold;
@@ -6089,6 +6099,11 @@ button.close {
       margin: 0;
       padding: 0;
       text-transform: uppercase; }
+  .content__copy blockquote {
+    font-size: 1.6rem;
+    border-color: #eff3f6;
+    font-family: "Droid Serif", Georgia, sans-serif;
+    font-style: italic; }
 
 .sidebar {
   width: 100%;
@@ -6105,7 +6120,7 @@ button.close {
 .search {
   background: #DEE6ED;
   padding: 20px;
-  border-radius: 4px 4px 4px 4px;
+  border-radius: 0 0 4px 4px;
   margin: 0;
   margin-bottom: 20px; }
   .search__input {
@@ -6134,7 +6149,8 @@ button.close {
     position: absolute;
     top: 4px;
     right: 10px;
-    z-index: 99999; }
+    z-index: 99999;
+    text-decoration: none; }
     .search__icon:after {
       font-size: 1.7rem;
       color: #826d61;
@@ -6149,7 +6165,7 @@ button.close {
 
 .subnav {
   background: #eff3f6;
-  padding: 20px 20px 5px 20px;
+  padding: 15px 20px 5px 20px;
   border-radius: 4px 4px 0 0; }
   .subnav__title {
     font-size: 2.2rem;
@@ -6171,10 +6187,11 @@ button.close {
       display: block;
       color: #826d61;
       margin-left: -20px;
-      margin-right: -20px; }
+      margin-right: -20px;
+      text-decoration: none; }
       .subnav__list__link:hover {
         background: rgba(255, 255, 255, 0.2);
-        color: black;
+        color: #BF8C2C;
         text-decoration: none; }
 
 /*!
@@ -8201,16 +8218,17 @@ html {
   line-height: 2.2rem; }
 
 body {
-  font-family: 'Corbel', Arial, Helvetica, sans-serif; }
+  font-family: "Corbel", Tahoma, sans-serif; }
 
 p {
   font-size: 1.6rem; }
 
 a,
+a:hover,
 a:active,
 a:focus {
-  color: #826d61;
-  text-decoration: none; }
+  color: #BF8C2C;
+  text-decoration: underline; }
 
 h1, h2, h3 {
   padding: 0;
@@ -8264,15 +8282,17 @@ h1, h2, h3 {
   top: 0;
   height: 50px;
   position: fixed;
-  z-index: 9999;
+  z-index: 99999999;
   background: #fff;
   -webkit-transition: 0.1s min-height ease-in-out;
   -moz-transition: 0.1s min-height ease-in-out;
   -ms-transition: 0.1s min-height ease-in-out;
   -o-transition: 0.1s min-height ease-in-out;
-  transition: 0.1s min-height ease-in-out; }
+  transition: 0.1s min-height ease-in-out;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.08); }
   @media (min-width: 768px) {
     .navbar {
+      box-shadow: none;
       min-height: 100px; } }
   .navbar .navbar-nav > li > a {
     -webkit-transition: 0.1s all ease-in-out;
@@ -8289,11 +8309,12 @@ h1, h2, h3 {
     margin-top: 2px; }
     .navbar-toggle__label {
       margin-right: 0;
-      margin-top: -5px;
+      margin-top: -6px;
       font-size: 1.4rem;
       position: absolute;
       right: 26px;
       top: 10px;
+      color: #826d61;
       font-weight: bold; }
   .navbar-collapse {
     font-size: 0.9rem;
@@ -8304,6 +8325,7 @@ h1, h2, h3 {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); }
     @media (min-width: 768px) {
       .navbar-collapse {
+        background: transparent;
         box-shadow: none; } }
   .navbar a {
     color: #826d61; }
@@ -8324,12 +8346,16 @@ h1, h2, h3 {
       box-shadow: none; }
       .navbar-nav > li .dropdown-menu > li {
         letter-spacing: 0;
-        font-size: 1.5rem; }
+        font-size: 1.5rem;
+        text-decoration: none; }
+        .navbar-nav > li .dropdown-menu > li a {
+          text-decoration: none; }
         .navbar-nav > li .dropdown-menu > li a:hover {
           color: #BF8C2C; }
     .navbar-nav > li.open a {
       border-radius: 5px 5px 0 0; }
     .navbar-nav > li > a {
+      text-decoration: none;
       font-size: 1.2rem;
       padding: 4px 7px;
       margin: 10px 2px;
@@ -8423,7 +8449,6 @@ h1, h2, h3 {
       .proposition__subtitle {
         font-size: 2rem; } }
   .proposition__cta {
-    font-family: 'Corbel', sans-serif;
     font-size: 2rem;
     color: white;
     position: relative;
@@ -8438,7 +8463,8 @@ h1, h2, h3 {
     transition: 0.2s all ease-in-out;
     display: block;
     margin-top: 5px;
-    width: 100%; }
+    width: 100%;
+    text-decoration: none; }
     .proposition__cta:hover {
       text-decoration: none;
       border-color: #e3c387;
@@ -8537,7 +8563,7 @@ h1, h2, h3 {
         margin-bottom: 0; } }
 
 .link {
-  font-family: 'Corbel', sans-serif;
+  font-family: "Corbel", Tahoma, sans-serif;
   color: #333333;
   display: inline-block;
   margin-top: 10px;
@@ -8550,7 +8576,8 @@ h1, h2, h3 {
   -moz-transition: 0.2s all ease-in-out;
   -ms-transition: 0.2s all ease-in-out;
   -o-transition: 0.2s all ease-in-out;
-  transition: 0.2s all ease-in-out; }
+  transition: 0.2s all ease-in-out;
+  text-decoration: none; }
   .link:hover {
     text-decoration: none;
     border-color: #e3c387;
@@ -8577,9 +8604,9 @@ h1, h2, h3 {
         display: inline; } }
   .streamer__title .fa {
     position: relative;
-    top: 4px;
+    top: 3px;
     font-size: 2.5rem;
-    right: -6px;
+    right: -5px;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -8661,7 +8688,8 @@ h1, h2, h3 {
     width: 16px; }
   .footer__link {
     display: block;
-    color: #ddd6d2; }
+    color: #ddd6d2;
+    text-decoration: none; }
     .footer__link:hover {
       color: #eae6e3;
       text-decoration: none; }
@@ -8700,9 +8728,8 @@ h1, h2, h3 {
 .attention {
   background: #f1eeec;
   padding: 20px;
-  border-radius: 5px;
-  margin: 0;
-  margin-bottom: 20px; }
+  margin: 0 0 20px 0;
+  border-radius: 5px; }
   .attention__wrapper {
     position: relative; }
   .attention__title {
@@ -8710,7 +8737,7 @@ h1, h2, h3 {
     line-height: 2.2rem;
     font-weight: bold;
     color: #826d61;
-    margin-bottom: 2px; }
+    margin-bottom: 10px; }
   .attention__subtitle {
     font-size: 1.4rem;
     line-height: 1.6rem;
@@ -8726,25 +8753,43 @@ h1, h2, h3 {
     color: #BF8C2C; }
     .attention__author--name {
       font-weight: bold; }
+  .attention__image img {
+    float: left;
+    margin-left: 0;
+    height: 68px;
+    margin-right: 20px;
+    border-radius: 1px; }
+    @media (min-width: 768px) {
+      .attention__image img {
+        float: right;
+        width: 50%;
+        margin-right: 0;
+        margin-left: 10px;
+        height: auto; } }
   .attention__copy {
-    font-size: 1.3rem;
-    line-height: 2.2rem;
-    font-family: 'Droid Serif', Georgia, sans-serif;
-    font-style: italic;
+    font-family: 36px;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
     color: #6e6e6e; }
-    .attention__copy:before {
-      font-size: 2rem;
-      opacity: 0.5;
-      content: open-quote; }
-    .attention__copy:after {
-      font-size: 2rem;
-      opacity: 0.5;
-      content: close-quote; }
+    .attention__copy--quote {
+      font-family: "Droid Serif", Georgia, sans-serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      line-height: 2.2rem; }
+      .attention__copy--quote:before {
+        font-size: 2rem;
+        opacity: 0.5;
+        content: open-quote; }
+      .attention__copy--quote:after {
+        font-size: 2rem;
+        opacity: 0.5;
+        content: close-quote; }
 
 .book {
   background: #f1eeec;
   margin-top: 30px;
   display: block;
+  text-decoration: none;
   -webkit-transition: 0.3s background ease-in-out;
   -moz-transition: 0.3s background ease-in-out;
   -ms-transition: 0.3s background ease-in-out;
@@ -8814,6 +8859,7 @@ h1, h2, h3 {
     padding: 10px 0;
     border-bottom: 1px solid #EBE9E8;
     display: block;
+    text-decoration: none;
     -webkit-transition: 0.2s color ease-in-out;
     -moz-transition: 0.2s color ease-in-out;
     -ms-transition: 0.2s color ease-in-out;
